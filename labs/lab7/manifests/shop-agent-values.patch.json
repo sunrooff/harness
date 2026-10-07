@@ -1,0 +1,57 @@
+{
+  "spec": {
+    "values": {
+      "components": {
+        "agent": {
+          "envOverrides": [
+            {
+              "name": "TRACELOOP_BASE_URL",
+              "value": "http://lab7-collector.lab7.svc.cluster.local:4318"
+            },
+            {
+              "name": "LLM_BASE_URL",
+              "value": "https://api.openai.com/v1"
+            },
+            {
+              "name": "LLM_MODEL",
+              "value": "gpt-4.1-mini"
+            },
+            {
+              "name": "API_KEY",
+              "valueFrom": {
+                "secretKeyRef": {
+                  "name": "shop-agent-llm",
+                  "key": "API_KEY"
+                }
+              }
+            },
+            {
+              "name": "MCP_ENABLED",
+              "value": "True"
+            },
+            {
+              "name": "USE_VCR",
+              "value": "False"
+            }
+          ]
+        },
+        "chatbot": {
+          "envOverrides": [
+            {
+              "name": "OTEL_EXPORTER_OTLP_ENDPOINT",
+              "value": "http://lab7-collector.lab7.svc.cluster.local:4318"
+            }
+          ]
+        },
+        "mcp": {
+          "envOverrides": [
+            {
+              "name": "TRACELOOP_BASE_URL",
+              "value": "http://lab7-collector.lab7.svc.cluster.local:4318"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

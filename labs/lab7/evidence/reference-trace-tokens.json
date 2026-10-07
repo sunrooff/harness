@@ -1,0 +1,25 @@
+{
+  "trace_id": "84030f14fcdb172d6abe1b69b65893a9",
+  "source": "Jaeger /api/v3/traces",
+  "llm_calls": [
+    {
+      "span_id": "c0c340e3d3af1a29",
+      "input_tokens": 449,
+      "output_tokens": 10,
+      "total_tokens": 459
+    },
+    {
+      "span_id": "915fad39058ed753",
+      "input_tokens": 1900,
+      "output_tokens": 56,
+      "total_tokens": 1956
+    },
+    {
+      "span_id": "17f1c897fd2cf356",
+      "input_tokens": 2282,
+      "output_tokens": 210,
+      "total_tokens": 2492
+    }
+  ],
+  "sum_total_tokens": 4907
+}

@@ -1,0 +1,4 @@
+{"spec":{"values":{
+  "otel":{"tracing":{"enabled":true,"exporter":{"otlp":{"endpoint":"http://lab7-collector.lab7.svc.cluster.local:4317","protocol":"grpc","insecure":true}}}},
+  "providers":{"openAI":{"apiKeySecretRef":"default-model-config"}}
+}}}

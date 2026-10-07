@@ -1,0 +1,315 @@
+{
+  "trace_id": "b551fda3770b1df0e6e5a40767bccb60",
+  "source": "Jaeger /api/v3/traces",
+  "llm_calls": [
+    {
+      "service": "retrieval_agent",
+      "span_id": "067df04de814a79f",
+      "input_tokens": 1528,
+      "output_tokens": 51
+    },
+    {
+      "service": "k8s_agent",
+      "span_id": "0d33cf1ca30a7554",
+      "input_tokens": 2707,
+      "output_tokens": 27
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "09cf33447c19d906",
+      "input_tokens": 1594,
+      "output_tokens": 32
+    },
+    {
+      "service": "k8s_agent",
+      "span_id": "5310a1643fc54ea2",
+      "input_tokens": 2855,
+      "output_tokens": 206
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "6cde3a7443470b40",
+      "input_tokens": 1846,
+      "output_tokens": 41
+    },
+    {
+      "service": "k8s_agent",
+      "span_id": "3eb77724418c0bb6",
+      "input_tokens": 3089,
+      "output_tokens": 34
+    },
+    {
+      "service": "k8s_agent",
+      "span_id": "11900265b5961b1f",
+      "input_tokens": 5290,
+      "output_tokens": 147
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "c3b4ff142f271997",
+      "input_tokens": 2048,
+      "output_tokens": 47
+    },
+    {
+      "service": "k8s_agent",
+      "span_id": "4c4a33f75e5cfa3d",
+      "input_tokens": 5471,
+      "output_tokens": 2108
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "73134ba7fa3ddb2c",
+      "input_tokens": 4217,
+      "output_tokens": 10
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "9f525af3688a2f49",
+      "input_tokens": 4264,
+      "output_tokens": 122
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "e45ab5253465cfa7",
+      "input_tokens": 4401,
+      "output_tokens": 339
+    },
+    {
+      "service": "k8s_agent",
+      "span_id": "ed0427a436a68b64",
+      "input_tokens": 7602,
+      "output_tokens": 30
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "6c41016f37f425e8",
+      "input_tokens": 4793,
+      "output_tokens": 36
+    },
+    {
+      "service": "k8s_agent",
+      "span_id": "054ff92a407710b7",
+      "input_tokens": 9642,
+      "output_tokens": 128
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "5f19ccca1fb5bffe",
+      "input_tokens": 4971,
+      "output_tokens": 42
+    },
+    {
+      "service": "k8s_agent",
+      "span_id": "6a2c2a6618c4999d",
+      "input_tokens": 9799,
+      "output_tokens": 1928
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "36b6801b78d506c9",
+      "input_tokens": 6955,
+      "output_tokens": 129
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "f82cd609f0ab5ad8",
+      "input_tokens": 7099,
+      "output_tokens": 330
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "7f5dbfaaeae78ece",
+      "input_tokens": 7483,
+      "output_tokens": 38
+    },
+    {
+      "service": "k8s_agent",
+      "span_id": "b75175fb309a03fc",
+      "input_tokens": 11752,
+      "output_tokens": 32
+    },
+    {
+      "service": "k8s_agent",
+      "span_id": "176b1753c37e32ac",
+      "input_tokens": 13607,
+      "output_tokens": 142
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "dc961c3e38e6897b",
+      "input_tokens": 7677,
+      "output_tokens": 44
+    },
+    {
+      "service": "k8s_agent",
+      "span_id": "eadac6d8aad0089b",
+      "input_tokens": 13780,
+      "output_tokens": 1764
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "ec9c0e5dd71659ff",
+      "input_tokens": 9499,
+      "output_tokens": 112
+    },
+    {
+      "service": "k8s_agent",
+      "span_id": "e20d48d4edf21189",
+      "input_tokens": 15568,
+      "output_tokens": 31
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "44f7d3456008beb2",
+      "input_tokens": 9626,
+      "output_tokens": 265
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "98c9c142481de188",
+      "input_tokens": 9945,
+      "output_tokens": 37
+    },
+    {
+      "service": "k8s_agent",
+      "span_id": "3f657336ce9c25ed",
+      "input_tokens": 19046,
+      "output_tokens": 184
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "70e31c538c41ef20",
+      "input_tokens": 10180,
+      "output_tokens": 43
+    },
+    {
+      "service": "k8s_agent",
+      "span_id": "7543c9627bfa279c",
+      "input_tokens": 19260,
+      "output_tokens": 3307
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "b08c2510a36e30e3",
+      "input_tokens": 13544,
+      "output_tokens": 129
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "6c027abf57ea3e2f",
+      "input_tokens": 13688,
+      "output_tokens": 347
+    },
+    {
+      "service": "k8s_agent",
+      "span_id": "4ace6287d734d690",
+      "input_tokens": 22591,
+      "output_tokens": 31
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "93a3e419a7bc277f",
+      "input_tokens": 14091,
+      "output_tokens": 37
+    },
+    {
+      "service": "k8s_agent",
+      "span_id": "97bea42d251d2135",
+      "input_tokens": 24570,
+      "output_tokens": 176
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "36142ad24e6e9cb8",
+      "input_tokens": 14318,
+      "output_tokens": 43
+    },
+    {
+      "service": "k8s_agent",
+      "span_id": "41dc3b511af2f33c",
+      "input_tokens": 24776,
+      "output_tokens": 1910
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "bfd9f816360c3282",
+      "input_tokens": 16285,
+      "output_tokens": 144
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "5063bca3ce1d3c40",
+      "input_tokens": 16444,
+      "output_tokens": 416
+    },
+    {
+      "service": "k8s_agent",
+      "span_id": "25def73af7f41549",
+      "input_tokens": 26710,
+      "output_tokens": 31
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "ebee828aecf32c19",
+      "input_tokens": 16913,
+      "output_tokens": 37
+    },
+    {
+      "service": "k8s_agent",
+      "span_id": "87a00b7fc8df3fbb",
+      "input_tokens": 29223,
+      "output_tokens": 2355
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "01c80ac0b347d5c6",
+      "input_tokens": 19319,
+      "output_tokens": 108
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "ff414143c930a991",
+      "input_tokens": 19442,
+      "output_tokens": 308
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "5f08234fbd6c3c79",
+      "input_tokens": 19806,
+      "output_tokens": 36
+    },
+    {
+      "service": "k8s_agent",
+      "span_id": "bd79c4a949b36883",
+      "input_tokens": 31601,
+      "output_tokens": 31
+    },
+    {
+      "service": "k8s_agent",
+      "span_id": "10284ede80f43794",
+      "input_tokens": 33250,
+      "output_tokens": 1564
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "4bbba28fdd3f9df9",
+      "input_tokens": 21420,
+      "output_tokens": 110
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "51b8a53bfc7038e3",
+      "input_tokens": 21545,
+      "output_tokens": 1333
+    },
+    {
+      "service": "retrieval_agent",
+      "span_id": "198d2f31518784e7",
+      "input_tokens": 22932,
+      "output_tokens": 126
+    }
+  ],
+  "llm_call_count": 51,
+  "unique_span_ids": 51,
+  "sum_input_plus_output": 681120
+}

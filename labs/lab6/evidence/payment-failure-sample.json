@@ -1,0 +1,306 @@
+{
+  "selection": "20 latest traces in MLflow experiment otel-demo with span.name = 'oteldemo.PaymentService/Charge', paymentFailure flag at 50 %",
+  "window_utc": [
+    "2026-10-07T14:23:33.831Z",
+    "2026-10-07T14:29:10.146Z"
+  ],
+  "summary": {
+    "charge_error": 9,
+    "failed_shown_as": {
+      "ERROR": 0,
+      "OK": 1,
+      "IN_PROGRESS": 8
+    }
+  },
+  "sample": [
+    {
+      "trace_id": "tr-0a265ce33309fca34e43d7e6b2718672",
+      "request_time": "2026-10-07T14:29:10.146Z",
+      "mlflow_state": "IN_PROGRESS",
+      "spans": 18,
+      "roots": [],
+      "error_spans": [
+        "ingress",
+        "router frontend egress",
+        "oteldemo.CheckoutService/PlaceOrder",
+        "oteldemo.PaymentService/Charge"
+      ],
+      "charge": "STATUS_CODE_ERROR"
+    },
+    {
+      "trace_id": "tr-13c59011fee8a37e75681943beb698b0",
+      "request_time": "2026-10-07T14:29:08.642Z",
+      "mlflow_state": "IN_PROGRESS",
+      "spans": 18,
+      "roots": [],
+      "error_spans": [
+        "ingress",
+        "router frontend egress",
+        "oteldemo.CheckoutService/PlaceOrder",
+        "oteldemo.PaymentService/Charge"
+      ],
+      "charge": "STATUS_CODE_ERROR"
+    },
+    {
+      "trace_id": "tr-a75d6674022ddccec7c2b97ad5360902",
+      "request_time": "2026-10-07T14:29:06.053Z",
+      "mlflow_state": "IN_PROGRESS",
+      "spans": 25,
+      "roots": [],
+      "error_spans": [
+        "ingress",
+        "router frontend egress",
+        "oteldemo.CheckoutService/PlaceOrder",
+        "oteldemo.PaymentService/Charge"
+      ],
+      "charge": "STATUS_CODE_ERROR"
+    },
+    {
+      "trace_id": "tr-fbc922776b066b48cd1b6b12784baefa",
+      "request_time": "2026-10-07T14:28:20.550Z",
+      "mlflow_state": "IN_PROGRESS",
+      "spans": 33,
+      "roots": [],
+      "error_spans": [
+        "ingress",
+        "router frontend egress",
+        "oteldemo.CheckoutService/PlaceOrder",
+        "oteldemo.PaymentService/Charge"
+      ],
+      "charge": "STATUS_CODE_ERROR"
+    },
+    {
+      "trace_id": "tr-04218bec7a4c90314d56645c20761909",
+      "request_time": "2026-10-07T14:28:02.709Z",
+      "mlflow_state": "IN_PROGRESS",
+      "spans": 18,
+      "roots": [],
+      "error_spans": [
+        "ingress",
+        "router frontend egress",
+        "oteldemo.CheckoutService/PlaceOrder",
+        "oteldemo.PaymentService/Charge"
+      ],
+      "charge": "STATUS_CODE_ERROR"
+    },
+    {
+      "trace_id": "tr-ff175a6f8495c877bf9b50b44b093074",
+      "request_time": "2026-10-07T14:27:41.751Z",
+      "mlflow_state": "IN_PROGRESS",
+      "spans": 31,
+      "roots": [],
+      "error_spans": [
+        "ingress",
+        "POST",
+        "POST /api/checkout",
+        "router frontend egress",
+        "grpc.oteldemo.CheckoutService/PlaceOrder",
+        "executing api route (pages) /api/checkout",
+        "oteldemo.CheckoutService/PlaceOrder",
+        "oteldemo.PaymentService/Charge"
+      ],
+      "charge": "STATUS_CODE_ERROR"
+    },
+    {
+      "trace_id": "tr-6469e6181e014707b25a472ee47660aa",
+      "request_time": "2026-10-07T14:27:40.125Z",
+      "mlflow_state": "IN_PROGRESS",
+      "spans": 31,
+      "roots": [],
+      "error_spans": [
+        "ingress",
+        "router frontend egress",
+        "POST /api/checkout",
+        "POST",
+        "grpc.oteldemo.CheckoutService/PlaceOrder",
+        "executing api route (pages) /api/checkout",
+        "oteldemo.CheckoutService/PlaceOrder",
+        "oteldemo.PaymentService/Charge"
+      ],
+      "charge": "STATUS_CODE_ERROR"
+    },
+    {
+      "trace_id": "tr-c7ba4dc8b03009320de1b50e95a7233e",
+      "request_time": "2026-10-07T14:27:23.546Z",
+      "mlflow_state": "IN_PROGRESS",
+      "spans": 57,
+      "roots": [],
+      "error_spans": [
+        "POST",
+        "POST /api/checkout",
+        "ingress",
+        "router frontend egress",
+        "grpc.oteldemo.CheckoutService/PlaceOrder",
+        "executing api route (pages) /api/checkout",
+        "oteldemo.CheckoutService/PlaceOrder",
+        "oteldemo.PaymentService/Charge",
+        "charge",
+        "grpc.oteldemo.PaymentService/Charge"
+      ],
+      "charge": "STATUS_CODE_ERROR"
+    },
+    {
+      "trace_id": "tr-a3ba1e1db649d9c4b0c2e13ea37deca2",
+      "request_time": "2026-10-07T14:27:08.364Z",
+      "mlflow_state": "OK",
+      "spans": 80,
+      "roots": [
+        {
+          "name": "user_checkout_multi",
+          "status": "UNSET"
+        }
+      ],
+      "error_spans": [],
+      "charge": "UNSET"
+    },
+    {
+      "trace_id": "tr-e92ccb5a0e75bb3d77ae71ceebbb24ed",
+      "request_time": "2026-10-07T14:26:36.680Z",
+      "mlflow_state": "OK",
+      "spans": 38,
+      "roots": [
+        {
+          "name": "user_checkout_single",
+          "status": "UNSET"
+        }
+      ],
+      "error_spans": [],
+      "charge": "UNSET"
+    },
+    {
+      "trace_id": "tr-5c2fd0681dd46f566114cc9986364dd2",
+      "request_time": "2026-10-07T14:26:28.185Z",
+      "mlflow_state": "OK",
+      "spans": 43,
+      "roots": [
+        {
+          "name": "user_checkout_single",
+          "status": "UNSET"
+        }
+      ],
+      "error_spans": [
+        "POST /api/checkout",
+        "POST",
+        "ingress",
+        "router frontend egress",
+        "grpc.oteldemo.CheckoutService/PlaceOrder",
+        "executing api route (pages) /api/checkout",
+        "oteldemo.CheckoutService/PlaceOrder",
+        "grpc.oteldemo.PaymentService/Charge",
+        "oteldemo.PaymentService/Charge",
+        "charge"
+      ],
+      "charge": "STATUS_CODE_ERROR"
+    },
+    {
+      "trace_id": "tr-6e44bd7302e975cb3bfd767348535cab",
+      "request_time": "2026-10-07T14:25:24.107Z",
+      "mlflow_state": "OK",
+      "spans": 94,
+      "roots": [
+        {
+          "name": "user_checkout_multi",
+          "status": "UNSET"
+        }
+      ],
+      "error_spans": [],
+      "charge": "UNSET"
+    },
+    {
+      "trace_id": "tr-7482ad00cdaa4a272a9454d919edc1ad",
+      "request_time": "2026-10-07T14:24:57.650Z",
+      "mlflow_state": "OK",
+      "spans": 32,
+      "roots": [
+        {
+          "name": "user_checkout_single",
+          "status": "UNSET"
+        }
+      ],
+      "error_spans": [],
+      "charge": "UNSET"
+    },
+    {
+      "trace_id": "tr-ff6c38b6296562f9dde695f88e398bad",
+      "request_time": "2026-10-07T14:24:44.567Z",
+      "mlflow_state": "OK",
+      "spans": 48,
+      "roots": [
+        {
+          "name": "user_checkout_multi",
+          "status": "UNSET"
+        }
+      ],
+      "error_spans": [],
+      "charge": "UNSET"
+    },
+    {
+      "trace_id": "tr-076ba77d65bad4ec83874dc6b5f2f707",
+      "request_time": "2026-10-07T14:24:26.830Z",
+      "mlflow_state": "OK",
+      "spans": 48,
+      "roots": [
+        {
+          "name": "user_checkout_multi",
+          "status": "UNSET"
+        }
+      ],
+      "error_spans": [],
+      "charge": "UNSET"
+    },
+    {
+      "trace_id": "tr-a7893b03aafeb943caa92923927040cb",
+      "request_time": "2026-10-07T14:24:08.558Z",
+      "mlflow_state": "IN_PROGRESS",
+      "spans": 37,
+      "roots": [],
+      "error_spans": [],
+      "charge": "UNSET"
+    },
+    {
+      "trace_id": "tr-20fd3b3fa36db18ecd85cdf3a27abb6b",
+      "request_time": "2026-10-07T14:24:05.628Z",
+      "mlflow_state": "IN_PROGRESS",
+      "spans": 37,
+      "roots": [],
+      "error_spans": [],
+      "charge": "UNSET"
+    },
+    {
+      "trace_id": "tr-09c78cb9553354b74d1b5422480d8b52",
+      "request_time": "2026-10-07T14:23:54.361Z",
+      "mlflow_state": "IN_PROGRESS",
+      "spans": 48,
+      "roots": [],
+      "error_spans": [],
+      "charge": "UNSET"
+    },
+    {
+      "trace_id": "tr-ae5b0bb2017e3aa974c2801d0443d483",
+      "request_time": "2026-10-07T14:23:51.272Z",
+      "mlflow_state": "IN_PROGRESS",
+      "spans": 41,
+      "roots": [],
+      "error_spans": [],
+      "charge": "UNSET"
+    },
+    {
+      "trace_id": "tr-c286a53fa261a9ba1ff3cce2330becec",
+      "request_time": "2026-10-07T14:23:33.831Z",
+      "mlflow_state": "IN_PROGRESS",
+      "spans": 41,
+      "roots": [],
+      "error_spans": [],
+      "charge": "UNSET"
+    }
+  ],
+  "reference_successful_order": {
+    "trace_id": "tr-8e35799ba3559a937a7f51543de8cbd9",
+    "request_time": "2026-10-07T14:09:31.352Z",
+    "mlflow_state": "IN_PROGRESS",
+    "spans": 27,
+    "roots": [],
+    "error_spans": [],
+    "charge": "UNSET"
+  }
+}

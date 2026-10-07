@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-10-07, via Jaeger /api/v3, MLflow /api/3.0, Phoenix GraphQL, neo4j cypher-shell",
+  "traces": [
+    {"scenario": "reference: shop agent, 'Compare the two most expensive telescopes'", "otel_trace_id": "84030f14fcdb172d6abe1b69b65893a9",
+     "spans": {"jaeger": 26, "mlflow": 26, "phoenix": 26}, "llm_tokens": {"jaeger_sum_of_llm_spans": 4907, "mlflow_header": 4907, "phoenix_llm_spans": 4907},
+     "root_status": {"mlflow": "OK", "phoenix": "UNSET"}},
+    {"scenario": "agent -> agent: retrieval-agent ingest delegating to k8s-agent", "otel_trace_id": "b551fda3770b1df0e6e5a40767bccb60",
+     "spans": {"jaeger": 146, "mlflow": 146, "phoenix": 146}, "services": ["kagent-controller", "retrieval_agent", "k8s_agent"],
+     "llm_tokens": {"jaeger_sum_input_plus_output_of_llm_spans": 681120, "mlflow_header": 681120, "phoenix_llm_spans": 681120}},
+    {"scenario": "wrong answer: 'Which agents use the default-model-config model config?' -> 'none'", "otel_trace_id": "6996f82476840aba02f792af46837d93",
+     "spans": {"jaeger": 10, "mlflow": 10, "phoenix": 10},
+     "tool_call": "read-cypher MATCH (a:Agent)-[:USES_MODEL]->(m:ModelConfig {name: \"default-model-config\"}) ...", "tool_response": "[]",
+     "graph_check": "neo4j: 7 nodes (all Agent), 0 relationships"},
+    {"scenario": "failed run: shop agent, VCR replay crashed on a read-only file", "otel_trace_id": "f6d37d68730dbfea77a0006af129edf0",
+     "spans": {"jaeger": 10, "mlflow": 10, "phoenix": 10}, "error_spans": {"jaeger": 7, "mlflow": 7, "phoenix": 7},
+     "root_status": {"mlflow": "ERROR", "phoenix": "ERROR"}},
+    {"scenario": "2-turn k8s-agent conversation", "session_id": "01a11742-3c8e-7601-8059-4ec7037b2843", "phoenix_session_traces": 2}
+  ]
+}

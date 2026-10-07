@@ -1,0 +1,83 @@
+# Fan-out collector: agent traces in, the same spans out to Phoenix, MLflow (experiment "agents" = 4) and Jaeger.
+# Sources: kagent agents (OTLP gRPC) and the shop agent/chatbot/mcp (OTLP HTTP).
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: lab7-collector
+  namespace: lab7
+data:
+  config.yaml: |
+    receivers:
+      otlp:
+        protocols:
+          grpc: {endpoint: 0.0.0.0:4317}
+          http: {endpoint: 0.0.0.0:4318}
+    processors:
+      batch: {}
+    exporters:
+      otlp_grpc/phoenix:
+        endpoint: phoenix-svc.phoenix.svc.cluster.local:4317
+        headers:
+          authorization: Bearer ${env:PHOENIX_API_KEY}
+        tls: {insecure: true}
+      otlp_http/mlflow:
+        endpoint: http://mlflow-mlflow.mlflow.svc.cluster.local:5000
+        headers:
+          x-mlflow-experiment-id: "4"   # id of the "agents" experiment in this run; differs in a new cluster
+        tls: {insecure: true}
+      otlp_grpc/jaeger:
+        endpoint: jaeger.lab7.svc.cluster.local:4317
+        tls: {insecure: true}
+      nop: {}    # the shop services also push metrics/logs; accept and drop them
+    service:
+      pipelines:
+        traces:
+          receivers: [otlp]
+          processors: [batch]
+          exporters: [otlp_grpc/phoenix, otlp_http/mlflow, otlp_grpc/jaeger]
+        metrics: {receivers: [otlp], exporters: [nop]}
+        logs: {receivers: [otlp], exporters: [nop]}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab7-collector
+  namespace: lab7
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: lab7-collector}
+  template:
+    metadata:
+      labels: {app: lab7-collector}
+    spec:
+      containers:
+      - name: collector
+        image: otel/opentelemetry-collector-contrib:0.160.0
+        args: ["--config=/conf/config.yaml"]
+        env:
+        - name: PHOENIX_API_KEY
+          valueFrom:
+            secretKeyRef: {name: phoenix-api-key, key: PHOENIX_API_KEY}
+        ports:
+        - {name: otlp-grpc, containerPort: 4317}
+        - {name: otlp-http, containerPort: 4318}
+        volumeMounts:
+        - {name: conf, mountPath: /conf}
+        resources:
+          requests: {cpu: 50m, memory: 64Mi}
+          limits: {cpu: 500m, memory: 256Mi}
+      volumes:
+      - name: conf
+        configMap: {name: lab7-collector}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lab7-collector
+  namespace: lab7
+spec:
+  selector: {app: lab7-collector}
+  ports:
+  - {name: otlp-grpc, port: 4317}
+  - {name: otlp-http, port: 4318}
