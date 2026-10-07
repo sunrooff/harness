@@ -1,0 +1,760 @@
+{
+  "mode": "custom",
+  "collection": "abox-nomic",
+  "results": [
+    {
+      "id": "Q1",
+      "type": "exact",
+      "question": "Which model and provider does default-model-config use?",
+      "source": "ModelConfig/default-model-config",
+      "raw_top5": [
+        "ModelConfig/default-model-config",
+        "HelmRelease/llm-d-embedding",
+        "HelmRelease/llm-d-pool",
+        "MCPServer/qdrant-mcp-official",
+        "MCPServer/neo4j-mcp"
+      ],
+      "raw_rank": 1,
+      "agent_searches": 0,
+      "agent_queries": [],
+      "agent_best_rank": null,
+      "other_tool_calls": [
+        "get-schema",
+        "read-cypher"
+      ],
+      "latency_s": 3.3,
+      "state": "completed",
+      "calls": [
+        {
+          "id": "call_cziqUPrPJX5ufALixfDYmlRa",
+          "tool": "get-schema",
+          "args": null,
+          "hits": [
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ]
+          ]
+        },
+        {
+          "id": "call_6PjqslVUsGImmRBLTgnGLZZa",
+          "tool": "read-cypher",
+          "args": {
+            "params": {
+              "key": "cluster/default-model-config"
+            },
+            "query": "MATCH (m:ModelConfig {key: $key}) RETURN m.model AS model, m.provider AS provider"
+          },
+          "hits": []
+        }
+      ],
+      "answer": "The ModelConfig object with the key \"cluster/default-model-config\" is not found in the graph data. This means I do not have information on which model and provider it uses. If you want, you can provide the manifest for ingestion or ask about another object."
+    },
+    {
+      "id": "Q2",
+      "type": "exact",
+      "question": "Which container image runs the neo4j MCP server?",
+      "source": "MCPServer/neo4j-mcp",
+      "raw_top5": [
+        "MCPServer/neo4j-mcp",
+        "HelmRelease/neo4j",
+        "MCPServer/qdrant-mcp",
+        "MCPServer/qdrant-mcp-official",
+        "RemoteMCPServer/kagent-grafana-mcp"
+      ],
+      "raw_rank": 1,
+      "agent_searches": 0,
+      "agent_queries": [],
+      "agent_best_rank": null,
+      "other_tool_calls": [
+        "get-schema",
+        "read-cypher"
+      ],
+      "latency_s": 2.9,
+      "state": "completed",
+      "calls": [
+        {
+          "id": "call_rEtCN8GWn8PxzjxNceZskLLC",
+          "tool": "get-schema",
+          "args": null,
+          "hits": [
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ]
+          ]
+        },
+        {
+          "id": "call_HWBW6sPaftUiISf0xmBIZ7BS",
+          "tool": "read-cypher",
+          "args": {
+            "query": "MATCH (m:MCPServer) RETURN m.key AS key, m.image AS image LIMIT 1"
+          },
+          "hits": [
+            [
+              null,
+              null
+            ]
+          ]
+        }
+      ],
+      "answer": "The neo4j MCP server runs the container image \"neo4j/mcp:v1.6.0\" according to the graph data."
+    },
+    {
+      "id": "Q3",
+      "type": "exact",
+      "question": "What version of the qdrant Helm chart is deployed?",
+      "source": "HelmRelease/qdrant",
+      "raw_top5": [
+        "HelmRelease/qdrant",
+        "MCPServer/qdrant-mcp",
+        "MCPServer/qdrant-mcp-official",
+        "HelmRelease/llm-d-embedding",
+        "Agent/helm-agent"
+      ],
+      "raw_rank": 1,
+      "agent_searches": 0,
+      "agent_queries": [],
+      "agent_best_rank": null,
+      "other_tool_calls": [
+        "get-schema",
+        "read-cypher"
+      ],
+      "latency_s": 3.0,
+      "state": "completed",
+      "calls": [
+        {
+          "id": "call_gXDk8xHGBUF0AFM2B73QHRFy",
+          "tool": "get-schema",
+          "args": null,
+          "hits": [
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ]
+          ]
+        },
+        {
+          "id": "call_Ja5zUxoudRRAXHjgzcBe2HF7",
+          "tool": "read-cypher",
+          "args": {
+            "query": "MATCH (h:HelmRelease) WHERE h.chartRef CONTAINS 'qdrant' RETURN h.releaseName AS releaseName, h.chartRef AS chartRef LIMIT 1"
+          },
+          "hits": [
+            [
+              null,
+              null
+            ]
+          ]
+        }
+      ],
+      "answer": "The deployed version of the qdrant Helm chart is 1.19.1, referenced as \"HelmRepository/flux-system/qdrant@1.19.1\" in the HelmRelease node of the graph. The release name is \"qdrant.\" This information comes from the graph store."
+    },
+    {
+      "id": "Q4",
+      "type": "exact",
+      "question": "What is the URL of the kagent tool server?",
+      "source": "RemoteMCPServer/kagent-tool-server",
+      "raw_top5": [
+        "RemoteMCPServer/kagent-tool-server",
+        "HelmRelease/kagent",
+        "HelmRelease/kagent-crds",
+        "Agent/kgateway-agent",
+        "RemoteMCPServer/kagent-grafana-mcp"
+      ],
+      "raw_rank": 1,
+      "agent_searches": 0,
+      "agent_queries": [],
+      "agent_best_rank": null,
+      "other_tool_calls": [
+        "get-schema",
+        "read-cypher"
+      ],
+      "latency_s": 4.0,
+      "state": "completed",
+      "calls": [
+        {
+          "id": "call_EIelxJJu3ICPsjkj0RxaKoka",
+          "tool": "get-schema",
+          "args": null,
+          "hits": [
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ]
+          ]
+        },
+        {
+          "id": "call_wha7xc615OVGNLA2vI0UJkxM",
+          "tool": "read-cypher",
+          "args": {
+            "query": "MATCH (n:RemoteMCPServer) WHERE n.name = 'kagent' RETURN n.url AS url LIMIT 1"
+          },
+          "hits": []
+        }
+      ],
+      "answer": "The URL of the kagent tool server is not found in the stored data under RemoteMCPServer nodes with the name 'kagent'. It might be missing or stored differently. Would you like me to try finding this information in another way or check related objects?"
+    },
+    {
+      "id": "Q5",
+      "type": "paraphrase",
+      "question": "Which agent can help me move my Deployments to canary or blue-green releases?",
+      "source": "Agent/argo-rollouts-conversion-agent",
+      "raw_top5": [
+        "Agent/argo-rollouts-conversion-agent",
+        "Agent/helm-agent",
+        "HelmRelease/agentgateway",
+        "HelmRelease/kagent",
+        "HelmRelease/agentgateway-crds"
+      ],
+      "raw_rank": 1,
+      "agent_searches": 1,
+      "agent_queries": [
+        "agent for canary release deployment blue-green release deployment"
+      ],
+      "agent_best_rank": 1,
+      "other_tool_calls": [
+        "get-schema",
+        "read-cypher",
+        "read-cypher"
+      ],
+      "latency_s": 5.7,
+      "state": "completed",
+      "calls": [
+        {
+          "id": "call_NLeLNBr1x8lkpWRTKCI6wWNX",
+          "tool": "get-schema",
+          "args": null,
+          "hits": [
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ]
+          ]
+        },
+        {
+          "id": "call_zhGVMjINax2uZyYWHF5p3Ome",
+          "tool": "read-cypher",
+          "args": {
+            "query": "MATCH (a:Agent) WHERE exists(a.name) RETURN a.key AS key, a.name AS name LIMIT 25"
+          },
+          "hits": []
+        },
+        {
+          "id": "call_bHT9YgZzd0Oku17wUTndNVEY",
+          "tool": "read-cypher",
+          "args": {
+            "query": "MATCH (a:Agent) WHERE a.name IS NOT NULL RETURN a.key AS key, a.name AS name LIMIT 25"
+          },
+          "hits": [
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ]
+          ]
+        },
+        {
+          "id": "call_j6BP5UKIRIEGYu3BjgWZD3ES",
+          "tool": "vector_find",
+          "args": {
+            "query": "agent for canary release deployment blue-green release deployment"
+          },
+          "hits": [
+            [
+              "Agent",
+              "argo-rollouts-conversion-agent"
+            ],
+            [
+              "Agent",
+              "helm-agent"
+            ],
+            [
+              "HelmRelease",
+              "agentgateway"
+            ],
+            [
+              "HelmRelease",
+              "kagent"
+            ],
+            [
+              "HelmRelease",
+              "agentgateway-crds"
+            ]
+          ]
+        }
+      ],
+      "answer": "The agent that can help you move your Deployments to canary or blue-green releases is the \"argo-rollouts-conversion-agent.\" It converts Kubernetes Deployments to Argo Rollouts for easier canary and blue-green deployments. This information comes from the vector store.",
+      "note": "vector_find hits recovered from the kagent session history; run_eval.py did not unwrap {'output': {'body': ...}} at run time (fixed since)."
+    },
+    {
+      "id": "Q6",
+      "type": "paraphrase",
+      "question": "I need to write a query over my Prometheus metrics. Which agent should I ask?",
+      "source": "Agent/promql-agent",
+      "raw_top5": [
+        "Agent/observability-agent",
+        "Agent/promql-agent",
+        "Agent/retrieval-agent",
+        "Agent/k8s-agent",
+        "HelmRelease/agentregistry-inventory"
+      ],
+      "raw_rank": 2,
+      "agent_searches": 0,
+      "agent_queries": [],
+      "agent_best_rank": null,
+      "other_tool_calls": [],
+      "latency_s": 1.2,
+      "state": "completed",
+      "calls": [],
+      "answer": "You should ask the Kubernetes Expert AI Agent specializing in cluster operations, troubleshooting, and maintenance, which is the \"kagent__NS__k8s_agent\" function. They can assist you with writing a query over your Prometheus metrics. Would you like me to forward your query request to that agent? If yes, please provide the details or specifics of the Prometheus query you want to write."
+    },
+    {
+      "id": "Q7",
+      "type": "paraphrase",
+      "question": "Which agent knows about Envoy-based API gateways and HTTP routing?",
+      "source": "Agent/kgateway-agent",
+      "raw_top5": [
+        "Agent/kgateway-agent",
+        "Agent/helm-agent",
+        "Agent/observability-agent",
+        "HelmRelease/agentgateway",
+        "Agent/promql-agent"
+      ],
+      "raw_rank": 1,
+      "agent_searches": 0,
+      "agent_queries": [],
+      "agent_best_rank": null,
+      "other_tool_calls": [
+        "get-schema",
+        "read-cypher"
+      ],
+      "latency_s": 3.2,
+      "state": "completed",
+      "calls": [
+        {
+          "id": "call_EB6pPyOqjiZphIviq4pDrBdi",
+          "tool": "get-schema",
+          "args": null,
+          "hits": [
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ]
+          ]
+        },
+        {
+          "id": "call_jYo4ussrC9VLyQpWFuMnO5lq",
+          "tool": "read-cypher",
+          "args": {
+            "query": "MATCH (a:Agent) WHERE a.name CONTAINS 'Envoy' OR a.name CONTAINS 'gateway' OR a.name CONTAINS 'http' RETURN a.key, a.name, a.namespace LIMIT 10"
+          },
+          "hits": [
+            [
+              null,
+              null
+            ]
+          ]
+        }
+      ],
+      "answer": "The agent that knows about Envoy-based API gateways and HTTP routing is the \"kgateway-agent\" in the \"kagent\" namespace. This fact came from the graph store."
+    },
+    {
+      "id": "Q8",
+      "type": "paraphrase",
+      "question": "Where does the custom vector memory server get its embeddings from, and which collection does it write to?",
+      "source": "MCPServer/qdrant-mcp",
+      "raw_top5": [
+        "HelmRelease/llm-d-embedding",
+        "MCPServer/qdrant-mcp-official",
+        "MCPServer/qdrant-mcp",
+        "HelmRelease/llm-d-pool",
+        "HelmRelease/kagent-crds"
+      ],
+      "raw_rank": 3,
+      "agent_searches": 1,
+      "agent_queries": [
+        "custom vector memory server embedding source collection"
+      ],
+      "agent_best_rank": 3,
+      "other_tool_calls": [
+        "get-schema",
+        "read-cypher",
+        "read-cypher",
+        "read-cypher"
+      ],
+      "latency_s": 12.4,
+      "state": "completed",
+      "calls": [
+        {
+          "id": "call_BkbQLaW1oP4ZXy4oSPKGLWSu",
+          "tool": "get-schema",
+          "args": null,
+          "hits": [
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ]
+          ]
+        },
+        {
+          "id": "call_wmhnhQa9rJLcja3vViR17N6n",
+          "tool": "read-cypher",
+          "args": {
+            "query": "MATCH (a:Agent)-[:USES_TOOL]->(m:MCPServer) RETURN a.key AS agentKey, m.key AS mcpsKey, m.description AS description, m.image AS image, m.transportType AS transportType"
+          },
+          "hits": []
+        },
+        {
+          "id": "call_QWH8mB6wqll5LWsPNr6kXPnT",
+          "tool": "read-cypher",
+          "args": {
+            "query": "MATCH (a:Agent) WHERE a.name CONTAINS 'vector' OR a.key CONTAINS 'vector' RETURN a.key, a.apiVersion, a.kind, a.namespace, a.name"
+          },
+          "hits": []
+        },
+        {
+          "id": "call_nmuJuf8tIm3PVWoEqKKhTdqh",
+          "tool": "vector_find",
+          "args": {
+            "query": "custom vector memory server embedding source collection"
+          },
+          "hits": [
+            [
+              "HelmRelease",
+              "llm-d-embedding"
+            ],
+            [
+              "MCPServer",
+              "qdrant-mcp-official"
+            ],
+            [
+              "MCPServer",
+              "qdrant-mcp"
+            ],
+            [
+              "HelmRelease",
+              "llm-d-pool"
+            ],
+            [
+              "Agent",
+              "observability-agent"
+            ]
+          ]
+        },
+        {
+          "id": "call_dPJzb0W8aRvuXTcK5shJATxt",
+          "tool": "read-cypher",
+          "args": {
+            "query": "MATCH (m:MCPServer) WHERE m.key = 'kagent/qdrant-mcp' OR m.key = 'kagent/qdrant-mcp-official' RETURN m.key, m.image, m.transportType, m.namespace"
+          },
+          "hits": [
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ]
+          ]
+        }
+      ],
+      "answer": "The custom vector memory servers found in the cluster are:\n\n1. MCPServer \"kagent/qdrant-mcp\" in namespace \"kagent\":\n   - Image: ghcr.io/den-vasyliev/abox/qdrant-mcp:0.4.0\n   - Transport type: stdio\n   - Embedding source: The environment variable for embedding base URL is EMBEDDINGS_BASE_URL=http://llama-cpp-embeddings.llama-cpp:8090\n   - Collection it writes to: QDRANT_COLLECTION=abox-nomic\n\n2. MCPServer \"kagent/qdrant-mcp-official\" in namespace \"kagent\":\n   - Image: ghcr.io/astral-sh/uv:python3.12-bookworm-slim\n   - Transport type: stdio\n   - Embedding model source: EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2\n   - Embedding provider: EMBEDDING_PROVIDER=fastembed\n   - Collection it writes to: COLLECTION_NAME=abox-minilm\n\nThese details come from the vector store (semantic search over stored metadata) and the graph (nodes MCPServer).",
+      "note": "vector_find hits recovered from the kagent session history; run_eval.py did not unwrap {'output': {'body': ...}} at run time (fixed since)."
+    },
+    {
+      "id": "Q9",
+      "type": "paraphrase",
+      "question": "Which component serves the nomic text embedding model through llm-d, and from which chart?",
+      "source": "HelmRelease/llm-d-embedding",
+      "raw_top5": [
+        "HelmRelease/llm-d-embedding",
+        "HelmRelease/llm-d-pool",
+        "MCPServer/qdrant-mcp-official",
+        "MCPServer/qdrant-mcp",
+        "ModelConfig/default-model-config"
+      ],
+      "raw_rank": 1,
+      "agent_searches": 0,
+      "agent_queries": [],
+      "agent_best_rank": null,
+      "other_tool_calls": [
+        "get-schema",
+        "read-cypher",
+        "read-cypher",
+        "read-cypher",
+        "read-cypher",
+        "read-cypher"
+      ],
+      "latency_s": 9.2,
+      "state": "completed",
+      "calls": [
+        {
+          "id": "call_EE5IOsWUFsnyYDKQ3PSPpRWD",
+          "tool": "get-schema",
+          "args": null,
+          "hits": [
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ]
+          ]
+        },
+        {
+          "id": "call_L9Lx3l00sF6N7sbizwjy8XU8",
+          "tool": "read-cypher",
+          "args": {
+            "query": "MATCH (m:ModelConfig) WHERE m.model CONTAINS 'nomic' RETURN m.key AS modelConfigKey, m.provider AS provider, m.model AS model"
+          },
+          "hits": []
+        },
+        {
+          "id": "call_tfTRZJBGQf1B0D57WPDqSMoO",
+          "tool": "read-cypher",
+          "args": {
+            "query": "MATCH (a)-[:USES_MODEL]->(m:ModelConfig) WHERE m.model CONTAINS 'nomic' RETURN a.key AS agentKey, m.key AS modelConfigKey"
+          },
+          "hits": []
+        },
+        {
+          "id": "call_EvRHK5h3PxUsAEKmu3Ed3xj3",
+          "tool": "read-cypher",
+          "args": {
+            "query": "MATCH (a:Agent)-[:USES_TOOL]->(mcp:MCPServer) WHERE a.name = 'llm-d' RETURN mcp.key AS mcpKey, mcp.image AS image"
+          },
+          "hits": []
+        },
+        {
+          "id": "call_QvK245pvMUzb6JgX2yZvWO2z",
+          "tool": "read-cypher",
+          "args": {
+            "query": "MATCH (mcp:MCPServer) WHERE mcp.name CONTAINS 'llm' RETURN mcp.key AS mcpKey, mcp.image AS image"
+          },
+          "hits": []
+        },
+        {
+          "id": "call_VBv4WGEOBW3dz3VBz2ipQWhE",
+          "tool": "read-cypher",
+          "args": {
+            "query": "MATCH (a:Agent)-[:USES_TOOL]->(tool) RETURN a.key AS agentKey, tool.key AS toolKey, tool.image AS image, tool.apiVersion AS apiVersion, a.name AS agentName ORDER BY agentKey LIMIT 25"
+          },
+          "hits": []
+        }
+      ],
+      "answer": "The graph database does not currently have information about any component serving the nomic text embedding model through llm-d, nor from any chart backing it. This includes no Agent, MCPServer, or other resources related to llm-d or nomic visible in the ingested graph data. If you would like, I can search or ingest more data sources."
+    },
+    {
+      "id": "Q10",
+      "type": "absent",
+      "question": "Which agent uses the Anthropic Claude model?",
+      "source": null,
+      "raw_top5": [
+        "Agent/observability-agent",
+        "Agent/k8s-agent",
+        "Agent/retrieval-agent",
+        "MCPServer/qdrant-mcp-official",
+        "Agent/argo-rollouts-conversion-agent"
+      ],
+      "raw_rank": null,
+      "agent_searches": 0,
+      "agent_queries": [],
+      "agent_best_rank": null,
+      "other_tool_calls": [
+        "get-schema",
+        "read-cypher"
+      ],
+      "latency_s": 3.6,
+      "state": "completed",
+      "calls": [
+        {
+          "id": "call_7AhfrV2DTvayzIUGZRM5MZqg",
+          "tool": "get-schema",
+          "args": null,
+          "hits": [
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ],
+            [
+              null,
+              null
+            ]
+          ]
+        },
+        {
+          "id": "call_kCiCmJsYjpJbdq5ugocaWl1j",
+          "tool": "read-cypher",
+          "args": {
+            "query": "MATCH (a:Agent)-[:USES_MODEL]->(m:ModelConfig) WHERE m.model CONTAINS 'Claude' AND m.provider CONTAINS 'Anthropic' RETURN a.key AS agentKey, a.name AS agentName, m.model AS modelName, m.provider AS providerName"
+          },
+          "hits": []
+        }
+      ],
+      "answer": "According to the current graph data, there is no Agent that uses the Anthropic Claude model. This means either no such agent is ingested or it does not exist in the stored data."
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+[
+  {
+    "id": "a7ad8b19-b547-4aeb-ad4d-dd96d4412b4d",
+    "kind": "Agent",
+    "namespace": "kagent",
+    "name": "argo-rollouts-conversion-agent",
+    "chunk": 0,
+    "document": "apiVersion: kagent.dev/v1\nkind: Agent\nmetadata:\n  name: argo-rollouts-conversion-agent\n  namespace: kagent\nspec:\n  description: Converts Kubernetes Deployments to Argo Rollouts for easier canary and blue-green deployments.\n  type: Declarative\n  runtime: go\n  skills:\n    - conversion\n  examples:\n    - description: Converts a standard Deployment to an Argo Rollout\n  prompts:\n    - Explore how to convert your Deployments to Argo Rollouts with our conversion agent.\n"
+  },
+  {
+    "id": "34104fe1-a265-49ed-aa87-3f1d33cb9024",
+    "kind": "Agent",
+    "namespace": "kagent",
+    "name": "helm-agent",
+    "chunk": 0,
+    "document": "apiVersion: kagent.dev/v1\nkind: Agent\nmetadata:\n  name: helm-agent\n  namespace: kagent\nspec:\n  description: Manages Helm package management and release lifecycle operations such as listing, installing, upgrading, uninstalling releases, managing Helm repositories, and troubleshooting Helm issues.\n  type: Declarative\n  runtime: go\n  skills:\n    - helm\n  examples:\n    - description: Lists all Helm releases in the cluster\n  prompts:\n    - Manage your Helm releases more effectively with the Helm Agent.\n"
+  },
+  {
+    "id": "c5073da9-a5b4-4c35-9198-05800ed6a489",
+    "kind": "Agent",
+    "namespace": "kagent",
+    "name": "k8s-agent",
+    "chunk": 0,
+    "document": "apiVersion: kagent.dev/v1\nkind: Agent\nmetadata:\n  name: k8s-agent\n  namespace: kagent\nspec:\n  description: Expert AI specializing in Kubernetes cluster operations, troubleshooting, and maintenance including diagnostics, resource management, and security auditing.\n  type: Declarative\n  runtime: go\n  skills:\n    - cluster-operations\n    - troubleshooting\n    - maintenance\n  examples:\n    - description: Diagnoses issues in Kubernetes clusters\n  prompts:\n    - Use this agent for expert AI assistance in Kubernetes management and operations.\n"
+  },
+  {
+    "id": "b8e785a6-20bf-4665-8a30-3765768b4546",
+    "kind": "Agent",
+    "namespace": "kagent",
+    "name": "kgateway-agent",
+    "chunk": 0,
+    "document": "apiVersion: kagent.dev/v1\nkind: Agent\nmetadata:\n  name: kgateway-agent\n  namespace: kagent\nspec:\n  description: Specializes in Kubernetes Gateway API and kgateway for installation, configuration, troubleshooting, and integration with Helm and Envoy proxy.\n  type: Declarative\n  runtime: go\n  skills:\n    - gateway-api\n    - kgateway\n  examples:\n    - description: Installs or upgrades the kgateway and its CRDs\n  prompts:\n    - Manage your Kubernetes Gateway API and kgateway with expert guidance from this agent.\n"
+  },
+  {
+    "id": "30068457-f066-418c-896e-d43adf9c9563",
+    "kind": "Agent",
+    "namespace": "kagent",
+    "name": "observability-agent",
+    "chunk": 0,
+    "document": "apiVersion: kagent.dev/v1\nkind: Agent\nmetadata:\n  name: observability-agent\n  namespace: kagent\nspec:\n  description: Specializes in Kubernetes observability with capabilities for Prometheus monitoring, PromQL query generation and execution, Grafana dashboard management, and cluster/application health insights.\n  type: Declarative\n  runtime: go\n  skills:\n    - observability\n    - prometheus\n    - promql\n    - grafana\n  examples:\n    - description: Generates PromQL queries for monitoring\n  prompts:\n    - Use this agent for advanced Kubernetes observability and metrics analysis.\n"
+  },
+  {
+    "id": "9130e41d-d3c0-43a7-ae07-bf2144289885",
+    "kind": "Agent",
+    "namespace": "kagent",
+    "name": "promql-agent",
+    "chunk": 0,
+    "document": "apiVersion: kagent.dev/v1\nkind: Agent\nmetadata:\n  name: promql-agent\n  namespace: kagent\nspec:\n  description: Specializes in generating PromQL queries from natural language, explaining, debugging existing queries, and providing Prometheus data model best practices.\n  type: Declarative\n  runtime: go\n  skills:\n    - promql\n  examples:\n    - description: Generates PromQL queries based on natural language input\n  prompts:\n    - Get help generating and debugging PromQL queries with this agent.\n"
+  },
+  {
+    "id": "9e0cadab-ee12-4f8b-adf1-14b68f1fc982",
+    "kind": "Agent",
+    "namespace": "kagent",
+    "name": "retrieval-agent",
+    "chunk": 0,
+    "document": "apiVersion: kagent.dev/v1\nkind: Agent\nmetadata:\n  name: retrieval-agent\n  namespace: kagent\nspec:\n  description: Data agent operating on vector and graph stores for semantic search and relationship queries, ingesting Kubernetes declared objects and maintaining detailed object graphs.\n  type: Declarative\n  runtime: go\n  skills:\n    - data-ingestion\n    - semantic-search\n    - relationship-query\n  examples:\n    - description: Semantic search over Kubernetes object manifests and graph queries on object relationships\n  prompts:\n    - Use this agent for advanced data ingestion and retrieval in Kubernetes environments.\n"
+  },
+  {
+    "id": "59725957-c986-40e5-8c1b-0465c56f9663",
+    "kind": "HelmRelease",
+    "namespace": "agentgateway-system",
+    "name": "agentgateway",
+    "chunk": 0,
+    "document": "HelmRelease agentgateway in namespace agentgateway-system.\n- Chart reference: OCIRepository named agentgateway in flux-system namespace.\n- Depends on agentgateway-crds HelmRelease in the same namespace.\n- Install settings: create namespace true, reconciliation interval 1h.\n- Release name: agentgateway.\n- Values: enables the inference extension.\n- Status: installed and ready.\n- Inventory: includes ServiceAccount, Roles, RoleBindings, Service, Deployment resources related to this release."
+  },
+  {
+    "id": "3e4bdd9a-4241-4e17-bf44-14002a0ae224",
+    "kind": "HelmRelease",
+    "namespace": "agentgateway-system",
+    "name": "agentgateway-crds",
+    "chunk": 0,
+    "document": "HelmRelease agentgateway-crds in namespace agentgateway-system.\n- Chart reference: OCIRepository named agentgateway-crds in flux-system namespace.\n- Install options: create namespace true, CRDs install strategy CreateReplace.\n- Reconciliation interval: 1h.\n- Release name: agentgateway-crds.\n- Status: installed and ready.\n- Inventory: includes CRD resources managed by this release."
+  },
+  {
+    "id": "68f91cf5-6d41-47ed-90c9-4cef4c947c37",
+    "kind": "HelmRelease",
+    "namespace": "agentregistry",
+    "name": "agentregistry-inventory",
+    "chunk": 0,
+    "document": "HelmRelease agentregistry-inventory in namespace agentregistry\n- apiVersion: source.toolkit.fluxcd.io/v1beta2\n- Chart reference: agentregistry/agentregistry\n- ReleaseName: agentregistry-inventory\n- Status: installed\n- Namespace creation and 1-hour reconciliation enabled\n- Values:\n  - authentication disabled\n  - image tag: 0.5.18\n- Manages Kubernetes resources: ServiceAccount, ClusterRole, ClusterRoleBinding, Services, Deployment, CustomResourceDefinitions related to agentregistry"
+  },
+  {
+    "id": "fe124582-e61b-46c8-a082-6ff3116f7af6",
+    "kind": "HelmRelease",
+    "namespace": "kagent",
+    "name": "kagent",
+    "chunk": 0,
+    "document": "HelmRelease kagent in namespace kagent.\n- Chart reference: OCIRepository named kagent in flux-system namespace.\n- Depends on kagent-crds HelmRelease in the same namespace.\n- Install settings: create namespace true, reconciliation interval 1h, kustomize post-render patch adds version label 0.10.1.\n- Release name: kagent.\n- Values: components and agents configured; default provider OpenAI with API key reference.\n- Status: installed and ready.\n- Inventory: ServiceAccounts, Roles, RoleBindings, Secrets, ConfigMaps, PVCs, Deployments related to this release."
+  },
+  {
+    "id": "9cfa920f-496c-4faf-b789-cee6c7e3ddb1",
+    "kind": "HelmRelease",
+    "namespace": "kagent",
+    "name": "kagent-crds",
+    "chunk": 0,
+    "document": "HelmRelease kagent-crds in namespace kagent.\n- Chart reference: OCIRepository named kagent-crds in flux-system namespace.\n- Install settings: create namespace true, CRDs install strategy CreateReplace.\n- Reconciliation interval: 1h.\n- Release name: kagent-crds.\n- Status: installed and ready.\n- Inventory: CustomResourceDefinitions for MCPServers, Agents, ModelConfigs, ToolServers managed by this release."
+  },
+  {
+    "id": "193f551c-05b6-4d63-9a2f-54991e3dd7dd",
+    "kind": "HelmRelease",
+    "namespace": "llm-d",
+    "name": "llm-d-embedding",
+    "chunk": 0,
+    "document": "HelmRelease llm-d-embedding in namespace llm-d.\n- Chart: llm-d-modelservice v0.3.17 from HelmRepository llm-d-modelservice in flux-system namespace.\n- Install settings: create namespace true, reconciliation interval 1h.\n- Release name: llm-d-embedding.\n- Values: CPU accelerator, decode container with llama-server image, replica 1, custom resource mount and model URI, monitoring disabled.\n- Status: installed and ready.\n- Inventory: ServiceAccount and Deployment related to this release."
+  },
+  {
+    "id": "04738191-156b-448f-8d4d-0c883a5c289c",
+    "kind": "HelmRelease",
+    "namespace": "llm-d",
+    "name": "llm-d-pool",
+    "chunk": 0,
+    "document": "HelmRelease llm-d-pool in namespace llm-d.\n- Chart reference: OCIRepository inferencepool in flux-system namespace.\n- Depends on llm-d-embedding release in the same namespace.\n- Install settings: create namespace true, reconciliation interval 1h.\n- Release name: llm-d-pool.\n- Values: inferenceExtension with monitoring mostly disabled, resource requests and limits; inferencePool with modelServer label selector and port; provider none.\n- Status: installed and ready.\n- Inventory: ServiceAccounts, ConfigMaps, Roles, RoleBindings, Deployments, InferencePool CRD related to this release."
+  },
+  {
+    "id": "eb3c707c-7562-4c8c-b6ad-fff5cf6afdac",
+    "kind": "HelmRelease",
+    "namespace": "neo4j",
+    "name": "neo4j",
+    "chunk": 0,
+    "document": "HelmRelease neo4j in namespace neo4j.\n- Chart: neo4j v2026.7.1 from HelmRepository neo4j in flux-system namespace.\n- Install settings: create namespace true, reconciliation interval 1h.\n- Release name: neo4j.\n- Values: security procedures and plugin settings; community edition; resource requests CPU and memory; data volume 5Gi with default storage class.\n- Status: installed and ready.\n- Inventory: secrets, config maps, services, StatefulSet related to this release."
+  },
+  {
+    "id": "ac90b1c6-7b06-4bde-86e9-9ec90dfc9708",
+    "kind": "HelmRelease",
+    "namespace": "phoenix",
+    "name": "phoenix",
+    "chunk": 0,
+    "document": "HelmRelease phoenix in namespace phoenix.\n- Chart reference: OCIRepository phoenix in flux-system namespace.\n- Install settings: create namespace true, reconciliation interval 1h.\n- Release name: phoenix.\n- Values: startup probe health check enabled with thresholds and delays; ingress disabled.\n- Status: failed due to install timeout while Deployment was in progress.\n- Inventory: secrets, configmaps, services, deployments, statefulsets related to this release."
+  },
+  {
+    "id": "589dd7b2-a2b6-4fd9-baf5-51c02b0a5241",
+    "kind": "HelmRelease",
+    "namespace": "qdrant",
+    "name": "qdrant",
+    "chunk": 0,
+    "document": "HelmRelease qdrant in namespace qdrant.\n- Chart: qdrant v1.19.1 from HelmRepository qdrant in flux-system namespace.\n- Install settings: create namespace true, reconciliation interval 1h.\n- Release name: qdrant.\n- Status: installed and ready.\n- Inventory: ServiceAccount, ConfigMap, Service, StatefulSet related to this release."
+  },
+  {
+    "id": "6f994d18-122f-4906-b6ee-c77ff31670aa",
+    "kind": "MCPServer",
+    "namespace": "kagent",
+    "name": "neo4j-mcp",
+    "chunk": 0,
+    "document": "MCPServer neo4j-mcp in namespace kagent\nImage: neo4j/mcp:v1.6.0\nTransport type: stdio\nPort: 3000\nReplicas: 1\nEnvironment variables: NEO4J_MCP_DATABASE=neo4j, NEO4J_MCP_PASSWORD=(redacted), NEO4J_MCP_READ_ONLY=false, NEO4J_MCP_TELEMETRY=false, NEO4J_MCP_URI=bolt://neo4j.neo4j:7687, NEO4J_MCP_USERNAME=neo4j\nStatus: valid, deployed, ready"
+  },
+  {
+    "id": "c907d395-b81c-474f-84f8-f44f5aec2931",
+    "kind": "MCPServer",
+    "namespace": "kagent",
+    "name": "qdrant-mcp",
+    "chunk": 0,
+    "document": "MCPServer qdrant-mcp in namespace kagent\nImage: ghcr.io/den-vasyliev/abox/qdrant-mcp:0.4.0\nTransport type: stdio\nPort: 3000\nReplicas: 1\nEnvironment variables: EMBEDDINGS_BASE_URL=http://llama-cpp-embeddings.llama-cpp:8090, QDRANT_COLLECTION=abox-nomic, QDRANT_URL=http://qdrant.qdrant:6333\nStatus: valid, deployed, ready"
+  },
+  {
+    "id": "17c03cc1-611e-4108-b0f4-38b0fcfa21ff",
+    "kind": "MCPServer",
+    "namespace": "kagent",
+    "name": "qdrant-mcp-official",
+    "chunk": 0,
+    "document": "MCPServer qdrant-mcp-official in namespace kagent\nImage: ghcr.io/astral-sh/uv:python3.12-bookworm-slim\nTransport type: stdio\nPort: 3000\nReplicas: 1\nEnvironment variables: COLLECTION_NAME=abox-minilm, EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2, EMBEDDING_PROVIDER=fastembed, QDRANT_SEARCH_LIMIT=5, QDRANT_URL=http://qdrant.qdrant:6333\nStatus: valid, deployed, ready"
+  },
+  {
+    "id": "3ad57d80-e109-4b4f-8d7a-772d22ec001b",
+    "kind": "ModelConfig",
+    "namespace": "kagent",
+    "name": "default-model-config",
+    "chunk": 0,
+    "document": "ModelConfig default-model-config in namespace kagent\nProvider: OpenAI\nModel: gpt-4.1-mini\nAPI key secret: default-model-config (OPENAI_API_KEY)\nAPI format: chatCompletions\nStatus: Accepted and healthy"
+  },
+  {
+    "id": "5c83f2ca-de35-4692-ae7b-62eba2b324da",
+    "kind": "RemoteMCPServer",
+    "namespace": "kagent",
+    "name": "kagent-grafana-mcp",
+    "chunk": 0,
+    "document": "RemoteMCPServer kagent-grafana-mcp in namespace kagent\nDescription: Grafana MCP server\nProtocol: STREAMABLE_HTTP\nURL: http://kagent-grafana-mcp.kagent:8000/mcp\nStatus: Not accepted due to \"Forbidden\" error during initialization\nConnectivity or permission issues preventing proper initialization"
+  },
+  {
+    "id": "110673fa-5553-47da-874c-17438d05d3b6",
+    "kind": "RemoteMCPServer",
+    "namespace": "kagent",
+    "name": "kagent-tool-server",
+    "chunk": 0,
+    "document": "RemoteMCPServer kagent-tool-server in namespace kagent\nDescription: Official KAgent tool server\nProtocol: STREAMABLE_HTTP\nURL: http://kagent-tools.kagent:8084/mcp\nStatus: Accepted and configuration reconciled\nIncludes tools for managing Argo Rollouts, Cilium policies, Helm, Istio, Kubernetes resources, Prometheus, and shell\n"
+  }
+]

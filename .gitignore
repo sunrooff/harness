@@ -1,0 +1,8 @@
+# Telegram chat export (course context, kept locally)
+ChatExport_*/
+
+# macOS
+.DS_Store
+
+# Newer Telegram exports
+harness-telegram-chat-history-*/

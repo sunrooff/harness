@@ -1,0 +1,493 @@
+{
+  "mode": "official",
+  "collection": "abox-minilm",
+  "results": [
+    {
+      "id": "Q1",
+      "type": "exact",
+      "question": "Which model and provider does default-model-config use?",
+      "source": "ModelConfig/default-model-config",
+      "raw_top5": [
+        "ModelConfig/default-model-config",
+        "HelmRelease/llm-d-embedding",
+        "HelmRelease/llm-d-pool",
+        "Agent/retrieval-agent",
+        "HelmRelease/agentregistry-inventory"
+      ],
+      "raw_rank": 1,
+      "agent_searches": 1,
+      "agent_queries": [
+        "default-model-config"
+      ],
+      "agent_best_rank": 1,
+      "other_tool_calls": [],
+      "latency_s": 5.7,
+      "state": "completed",
+      "calls": [
+        {
+          "id": "call_rE7ShHINcF5EzQX2rW6Dlhom",
+          "tool": "qdrant-find",
+          "args": {
+            "query": "default-model-config"
+          },
+          "hits": [
+            [
+              "ModelConfig",
+              "default-model-config"
+            ],
+            [
+              "HelmRelease",
+              "llm-d-pool"
+            ],
+            [
+              "HelmRelease",
+              "llm-d-embedding"
+            ],
+            [
+              "HelmRelease",
+              "kagent-crds"
+            ],
+            [
+              "Agent",
+              "argo-rollouts-conversion-agent"
+            ]
+          ]
+        }
+      ],
+      "answer": "The ModelConfig named \"default-model-config\" in the \"kagent\" namespace uses the model \"gpt-4.1-mini\" from the provider \"OpenAI.\" It specifies the OpenAI API format as \"chatCompletions\" and uses an API key secret named \"default-model-config\" with the key \"OPENAI_API_KEY.\""
+    },
+    {
+      "id": "Q2",
+      "type": "exact",
+      "question": "Which container image runs the neo4j MCP server?",
+      "source": "MCPServer/neo4j-mcp",
+      "raw_top5": [
+        "MCPServer/neo4j-mcp",
+        "HelmRelease/neo4j",
+        "MCPServer/qdrant-mcp",
+        "RemoteMCPServer/kagent-grafana-mcp",
+        "MCPServer/qdrant-mcp-official"
+      ],
+      "raw_rank": 1,
+      "agent_searches": 1,
+      "agent_queries": [
+        "neo4j MCPServer container image"
+      ],
+      "agent_best_rank": 1,
+      "other_tool_calls": [],
+      "latency_s": 3.0,
+      "state": "completed",
+      "calls": [
+        {
+          "id": "call_tq27dMhCPS43AyBlwAsoXlNP",
+          "tool": "qdrant-find",
+          "args": {
+            "query": "neo4j MCPServer container image"
+          },
+          "hits": [
+            [
+              "MCPServer",
+              "neo4j-mcp"
+            ],
+            [
+              "HelmRelease",
+              "neo4j"
+            ],
+            [
+              "MCPServer",
+              "qdrant-mcp-official"
+            ],
+            [
+              "MCPServer",
+              "qdrant-mcp"
+            ],
+            [
+              "RemoteMCPServer",
+              "kagent-grafana-mcp"
+            ]
+          ]
+        }
+      ],
+      "answer": "The neo4j MCPServer named \"neo4j-mcp\" in the \"kagent\" namespace runs the container image \"neo4j/mcp:v1.6.0\". It runs the command \"/app/neo4j-mcp\" and sets environment variables including NEO4J_MCP_DATABASE, NEO4J_MCP_PASSWORD, NEO4J_MCP_READ_ONLY, NEO4J_MCP_TELEMETRY, NEO4J_MCP_URI, and NEO4J_MCP_USERNAME. This information comes from the MCPServer object neo4j-mcp in namespace kagent."
+    },
+    {
+      "id": "Q3",
+      "type": "exact",
+      "question": "What version of the qdrant Helm chart is deployed?",
+      "source": "HelmRelease/qdrant",
+      "raw_top5": [
+        "HelmRelease/qdrant",
+        "HelmRelease/agentgateway",
+        "HelmRelease/kagent",
+        "HelmRelease/neo4j",
+        "HelmRelease/agentregistry-inventory"
+      ],
+      "raw_rank": 1,
+      "agent_searches": 0,
+      "agent_queries": [],
+      "agent_best_rank": null,
+      "other_tool_calls": [
+        "kagent__NS__k8s_agent"
+      ],
+      "latency_s": 5.5,
+      "state": "completed",
+      "calls": [
+        {
+          "id": "call_zRaajonflaUorJVjw3ewK1hT",
+          "tool": "kagent__NS__k8s_agent",
+          "args": {
+            "request": "Get the YAML manifest of the qdrant Helm chart deployment or HelmRelease to find the version of qdrant Helm chart deployed in the cluster."
+          },
+          "hits": []
+        }
+      ],
+      "answer": "The version of the qdrant Helm chart deployed in the cluster is 1.19.1, as indicated in the HelmRelease named 'qdrant' in the 'qdrant' namespace."
+    },
+    {
+      "id": "Q4",
+      "type": "exact",
+      "question": "What is the URL of the kagent tool server?",
+      "source": "RemoteMCPServer/kagent-tool-server",
+      "raw_top5": [
+        "RemoteMCPServer/kagent-tool-server",
+        "Agent/retrieval-agent",
+        "Agent/k8s-agent",
+        "Agent/kgateway-agent",
+        "Agent/argo-rollouts-conversion-agent"
+      ],
+      "raw_rank": 1,
+      "agent_searches": 1,
+      "agent_queries": [
+        "kagent tool server URL"
+      ],
+      "agent_best_rank": 1,
+      "other_tool_calls": [],
+      "latency_s": 2.0,
+      "state": "completed",
+      "calls": [
+        {
+          "id": "call_He8N2vpkYev6bRhPgKTHasfO",
+          "tool": "qdrant-find",
+          "args": {
+            "query": "kagent tool server URL"
+          },
+          "hits": [
+            [
+              "RemoteMCPServer",
+              "kagent-tool-server"
+            ],
+            [
+              "Agent",
+              "kgateway-agent"
+            ],
+            [
+              "HelmRelease",
+              "kagent"
+            ],
+            [
+              "Agent",
+              "argo-rollouts-conversion-agent"
+            ],
+            [
+              "Agent",
+              "k8s-agent"
+            ]
+          ]
+        }
+      ],
+      "answer": "The URL of the kagent tool server is http://kagent-tools.kagent:8084/mcp. This is configured in the RemoteMCPServer named \"kagent-tool-server\" in the \"kagent\" namespace."
+    },
+    {
+      "id": "Q5",
+      "type": "paraphrase",
+      "question": "Which agent can help me move my Deployments to canary or blue-green releases?",
+      "source": "Agent/argo-rollouts-conversion-agent",
+      "raw_top5": [
+        "Agent/argo-rollouts-conversion-agent",
+        "Agent/helm-agent",
+        "Agent/retrieval-agent",
+        "Agent/observability-agent",
+        "Agent/k8s-agent"
+      ],
+      "raw_rank": 1,
+      "agent_searches": 1,
+      "agent_queries": [
+        "agent canary blue-green deployment"
+      ],
+      "agent_best_rank": 1,
+      "other_tool_calls": [],
+      "latency_s": 2.5,
+      "state": "completed",
+      "calls": [
+        {
+          "id": "call_TfONMdzLZYgEXy6q2WRAUr7X",
+          "tool": "qdrant-find",
+          "args": {
+            "query": "agent canary blue-green deployment"
+          },
+          "hits": [
+            [
+              "Agent",
+              "argo-rollouts-conversion-agent"
+            ],
+            [
+              "Agent",
+              "observability-agent"
+            ],
+            [
+              "Agent",
+              "helm-agent"
+            ],
+            [
+              "Agent",
+              "k8s-agent"
+            ],
+            [
+              "Agent",
+              "retrieval-agent"
+            ]
+          ]
+        }
+      ],
+      "answer": "The agent that can help you move your Deployments to canary or blue-green releases is the Agent named \"argo-rollouts-conversion-agent\" in the namespace kagent. \n\nIt is specialized in converting Kubernetes Deployments to Argo Rollouts for progressive delivery. It supports converting Deployment resources to Rollout YAML with canary or blue-green strategies, and can create Rollouts referencing existing Deployments with workloadRef. It also provides migration guidance.\n\nLet me know if you want more details or how to use this agent."
+    },
+    {
+      "id": "Q6",
+      "type": "paraphrase",
+      "question": "I need to write a query over my Prometheus metrics. Which agent should I ask?",
+      "source": "Agent/promql-agent",
+      "raw_top5": [
+        "Agent/promql-agent",
+        "Agent/observability-agent",
+        "Agent/retrieval-agent",
+        "RemoteMCPServer/kagent-tool-server",
+        "Agent/k8s-agent"
+      ],
+      "raw_rank": 1,
+      "agent_searches": 0,
+      "agent_queries": [],
+      "agent_best_rank": null,
+      "other_tool_calls": [],
+      "latency_s": 1.5,
+      "state": "completed",
+      "calls": [],
+      "answer": "To help you with writing a query over your Prometheus metrics, you should ask the k8s-agent AI agent, as it specializes in cluster operations and troubleshooting, which typically includes working with monitoring and metrics tools like Prometheus. Would you like me to connect you to the k8s-agent now?"
+    },
+    {
+      "id": "Q7",
+      "type": "paraphrase",
+      "question": "Which agent knows about Envoy-based API gateways and HTTP routing?",
+      "source": "Agent/kgateway-agent",
+      "raw_top5": [
+        "Agent/kgateway-agent",
+        "Agent/promql-agent",
+        "Agent/retrieval-agent",
+        "Agent/observability-agent",
+        "RemoteMCPServer/kagent-tool-server"
+      ],
+      "raw_rank": 1,
+      "agent_searches": 1,
+      "agent_queries": [
+        "Envoy API gateway HTTP routing agent"
+      ],
+      "agent_best_rank": 1,
+      "other_tool_calls": [],
+      "latency_s": 7.2,
+      "state": "completed",
+      "calls": [
+        {
+          "id": "call_quYJdszDdPGeoBU3ULMcKRrJ",
+          "tool": "qdrant-find",
+          "args": {
+            "query": "Envoy API gateway HTTP routing agent"
+          },
+          "hits": [
+            [
+              "Agent",
+              "kgateway-agent"
+            ],
+            [
+              "Agent",
+              "promql-agent"
+            ],
+            [
+              "Agent",
+              "observability-agent"
+            ],
+            [
+              "HelmRelease",
+              "agentgateway"
+            ],
+            [
+              "Agent",
+              "retrieval-agent"
+            ]
+          ]
+        }
+      ],
+      "answer": "The agent that knows about Envoy-based API gateways and HTTP routing is the \"kgateway-agent\" in the \"kagent\" namespace. This agent specializes in kgateway, a cloud-native API gateway built on Envoy and Kubernetes Gateway API. It assists with installing, managing, upgrading kgateway via Helm, defining and applying Gateway API resources like Gateway and HTTPRoute, troubleshooting deployments and traffic routing issues, and providing feature guidance for advanced traffic management, AI Gateway capabilities, security policies, and integrations such as Argo CD."
+    },
+    {
+      "id": "Q8",
+      "type": "paraphrase",
+      "question": "Where does the custom vector memory server get its embeddings from, and which collection does it write to?",
+      "source": "MCPServer/qdrant-mcp",
+      "raw_top5": [
+        "HelmRelease/llm-d-embedding",
+        "HelmRelease/llm-d-pool",
+        "MCPServer/qdrant-mcp",
+        "HelmRelease/neo4j",
+        "Agent/retrieval-agent"
+      ],
+      "raw_rank": 3,
+      "agent_searches": 1,
+      "agent_queries": [
+        "custom vector memory server embeddings source collection"
+      ],
+      "agent_best_rank": 4,
+      "other_tool_calls": [],
+      "latency_s": 2.9,
+      "state": "completed",
+      "calls": [
+        {
+          "id": "call_zKlBiPRGuLxl4edsUoyQ2XBB",
+          "tool": "qdrant-find",
+          "args": {
+            "query": "custom vector memory server embeddings source collection"
+          },
+          "hits": [
+            [
+              "HelmRelease",
+              "llm-d-embedding"
+            ],
+            [
+              "HelmRelease",
+              "llm-d-pool"
+            ],
+            [
+              "HelmRelease",
+              "qdrant"
+            ],
+            [
+              "MCPServer",
+              "qdrant-mcp"
+            ],
+            [
+              "HelmRelease",
+              "neo4j"
+            ]
+          ]
+        }
+      ],
+      "answer": "The custom vector memory server named \"qdrant-mcp\" in the \"kagent\" namespace gets its embeddings from the URL specified in the environment variable EMBEDDINGS_BASE_URL set to \"http://llama-cpp-embeddings.llama-cpp:8090\". It writes to the collection specified by the environment variable QDRANT_COLLECTION which is set to \"abox-nomic\". This server is configured to connect to the Qdrant vector store at QDRANT_URL \"http://qdrant.qdrant:6333\". This information is from the MCPServer object named \"qdrant-mcp\" in the \"kagent\" namespace."
+    },
+    {
+      "id": "Q9",
+      "type": "paraphrase",
+      "question": "Which component serves the nomic text embedding model through llm-d, and from which chart?",
+      "source": "HelmRelease/llm-d-embedding",
+      "raw_top5": [
+        "HelmRelease/llm-d-embedding",
+        "HelmRelease/llm-d-pool",
+        "ModelConfig/default-model-config",
+        "HelmRelease/agentgateway",
+        "HelmRelease/qdrant"
+      ],
+      "raw_rank": 1,
+      "agent_searches": 1,
+      "agent_queries": [
+        "nomic text embedding model"
+      ],
+      "agent_best_rank": 1,
+      "other_tool_calls": [],
+      "latency_s": 2.5,
+      "state": "completed",
+      "calls": [
+        {
+          "id": "call_7YqNefmeT3HmWGke66Hodkvs",
+          "tool": "qdrant-find",
+          "args": {
+            "query": "nomic text embedding model"
+          },
+          "hits": [
+            [
+              "HelmRelease",
+              "llm-d-embedding"
+            ],
+            [
+              "HelmRelease",
+              "llm-d-pool"
+            ],
+            [
+              "ModelConfig",
+              "default-model-config"
+            ],
+            [
+              "MCPServer",
+              "qdrant-mcp-official"
+            ],
+            [
+              "Agent",
+              "retrieval-agent"
+            ]
+          ]
+        }
+      ],
+      "answer": "The component serving the nomic text embedding model through llm-d is the HelmRelease named \"llm-d-embedding\" in the namespace \"llm-d\". It deploys the 'llm-d-modelservice' Helm chart version v0.3.17 from a HelmRepository named 'llm-d-modelservice' in the flux-system namespace. The model artifacts point to the OCI URI for nomic-ai nomic-embed-text-v1.5.\n\nThis information comes from the HelmRelease object \"llm-d-embedding\" in namespace \"llm-d\"."
+    },
+    {
+      "id": "Q10",
+      "type": "absent",
+      "question": "Which agent uses the Anthropic Claude model?",
+      "source": null,
+      "raw_top5": [
+        "Agent/promql-agent",
+        "Agent/retrieval-agent",
+        "Agent/k8s-agent",
+        "Agent/observability-agent",
+        "Agent/kgateway-agent"
+      ],
+      "raw_rank": null,
+      "agent_searches": 1,
+      "agent_queries": [
+        "Anthropic Claude"
+      ],
+      "agent_best_rank": null,
+      "other_tool_calls": [],
+      "latency_s": 2.0,
+      "state": "completed",
+      "calls": [
+        {
+          "id": "call_WYWdBUgEPZ4ghYWpJ7O1Fhzj",
+          "tool": "qdrant-find",
+          "args": {
+            "query": "Anthropic Claude"
+          },
+          "hits": [
+            [
+              "MCPServer",
+              "qdrant-mcp-official"
+            ],
+            [
+              "MCPServer",
+              "qdrant-mcp"
+            ],
+            [
+              "Agent",
+              "promql-agent"
+            ],
+            [
+              "RemoteMCPServer",
+              "kagent-grafana-mcp"
+            ],
+            [
+              "HelmRelease",
+              "agentregistry-inventory"
+            ]
+          ]
+        }
+      ],
+      "answer": "The data I found does not mention any agent using the Anthropic Claude model. If you want, I can try searching with other related terms or different phrasing. Would you like me to do that?"
+    }
+  ]
+}

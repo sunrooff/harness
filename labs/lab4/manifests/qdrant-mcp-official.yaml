@@ -1,0 +1,31 @@
+# Official Qdrant MCP server (github.com/qdrant/mcp-server-qdrant), run with uvx; collection abox-minilm.
+apiVersion: kagent.dev/v1alpha1
+kind: MCPServer
+metadata:
+  name: qdrant-mcp-official
+  namespace: kagent
+spec:
+  transportType: stdio
+  stdioTransport: {}
+  deployment:
+    image: ghcr.io/astral-sh/uv:python3.12-bookworm-slim
+    cmd: uvx
+    args:
+    - mcp-server-qdrant@0.8.1
+    - --transport
+    - stdio
+    env:
+      QDRANT_URL: http://qdrant.qdrant:6333
+      COLLECTION_NAME: abox-minilm
+      EMBEDDING_PROVIDER: fastembed
+      EMBEDDING_MODEL: sentence-transformers/all-MiniLM-L6-v2
+      # Default 10; set to 5 to match the custom server.
+      QDRANT_SEARCH_LIMIT: "5"
+    resources:
+      requests:
+        cpu: 100m
+        memory: 512Mi
+      limits:
+        cpu: "1"
+        # The model runs in this process; OOMKilled at 256Mi.
+        memory: 2Gi

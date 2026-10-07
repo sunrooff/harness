@@ -1,0 +1,163 @@
+[
+  {
+    "id": "abd9b258-cf4c-4e64-9dee-564f4bf3beae",
+    "kind": "Agent",
+    "namespace": "kagent",
+    "name": "argo-rollouts-conversion-agent",
+    "document": "Agent kagent/argo-rollouts-conversion-agent is a declarative AI agent specialized in converting Kubernetes Deployments to Argo Rollouts for progressive delivery. It supports tasks like converting Deployment resources to Rollout YAML with canary or blue-green strategies, creating Rollouts referencing existing Deployments with workloadRef, and migration guidance. It runs with Go runtime, uses the default-model-config model, and accesses prompts from ConfigMap kagent-builtin-prompts. The system message details migration best practices and YAML examples. Its tools include MCPServer kagent-tool-server with relevant Kubernetes resource commands. Resource limits are CPU 1000m/50m and memory 256Mi/128Mi. The kind is Agent, namespace kagent."
+  },
+  {
+    "id": "229338a4-b6eb-4e40-b654-42d39ad0a242",
+    "kind": "Agent",
+    "namespace": "kagent",
+    "name": "helm-agent",
+    "document": "Agent kagent/helm-agent is a declarative Helm Expert AI Agent for Kubernetes cluster management. It specializes in Helm package management: managing Helm releases lifecycle (list, inspect, install, upgrade, rollback, uninstall), Helm chart repositories (add, update, info, docs), and Helm release troubleshooting (diagnosis, fix, debug). It uses the Go runtime, default-model-config model, and prompts from ConfigMap kagent-builtin-prompts. The system message describes expertise in Helm charts, releases, repos, and best practices for Kubernetes application deployment. Resource limits are CPU 1000m/50m and memory 256Mi/128Mi. The kind is Agent, namespace kagent."
+  },
+  {
+    "id": "e80d00e6-d4ca-468b-9968-eb0dbd4a2e59",
+    "kind": "Agent",
+    "namespace": "kagent",
+    "name": "k8s-agent",
+    "document": "Agent kagent/k8s-agent is a declarative Kubernetes Expert AI Agent focused on cluster operations, troubleshooting, and maintenance. It provides skills in cluster diagnostics (issue analysis, pod troubleshooting, node resource limits), resource management (scaling, resource optimization), and security audit (RBAC check, network policies, vulnerability identification). It runs with Go runtime, uses default-model-config, and accesses prompts in ConfigMap kagent-builtin-prompts. The system message highlights expertise in Kubernetes architecture, networking, storage, and resource management. Its resource limits are CPU 1000m/50m and memory 256Mi/128Mi. The kind is Agent, namespace kagent."
+  },
+  {
+    "id": "62a31448-8cd7-4d9b-b9bf-e848bfbed4ae",
+    "kind": "Agent",
+    "namespace": "kagent",
+    "name": "kgateway-agent",
+    "document": "Agent kagent/kgateway-agent is a declarative AI assistant specializing in kgateway, a cloud-native API gateway built on Envoy and Kubernetes Gateway API. It assists with installing, managing, upgrading kgateway via Helm, defining and applying Gateway API resources like Gateway and HTTPRoute, troubleshooting deployments and traffic routing issues, and providing feature guidance for advanced traffic management, AI Gateway capabilities, security policies, and integrations (e.g., Argo CD). It runs Go runtime, uses default-model-config, and accesses ConfigMap kagent-builtin-prompts for prompts. The system message details kgateway expertise including installation steps, config examples, troubleshooting, and operational best practices. Resource limits are CPU 1000m/50m and memory 256Mi/128Mi. The kind is Agent, namespace kagent."
+  },
+  {
+    "id": "9c37952f-ec14-439e-8fc7-b057dd64256b",
+    "kind": "Agent",
+    "namespace": "kagent",
+    "name": "observability-agent",
+    "document": "Agent kagent/observability-agent is a declarative Observability AI Agent specialized in Kubernetes monitoring using Prometheus and Grafana. It provides skills for Prometheus monitoring and PromQL querying, Grafana dashboard management (creation, updates, version control, permissions), and Kubernetes observability insights correlating resource information with metrics for troubleshooting. It runs on Go runtime, uses default-model-config, and accesses prompts from ConfigMap kagent-builtin-prompts. The system message highlights expertise in designing and troubleshooting monitoring solutions for Kubernetes. Resource limits are CPU 1000m/50m and memory 256Mi/128Mi. The kind is Agent, namespace kagent."
+  },
+  {
+    "id": "670a1ef4-0e19-4638-8965-529e8f2be42c",
+    "kind": "Agent",
+    "namespace": "kagent",
+    "name": "promql-agent",
+    "document": "Agent kagent/promql-agent is a declarative AI agent focused on generating, explaining, and debugging PromQL queries for Prometheus monitoring. It translates natural language monitoring requests into accurate PromQL queries, explains query syntax and behavior, and provides best practices for Prometheus data models and query optimization. It uses Go runtime, default-model-config, and accesses prompts from ConfigMap kagent-builtin-prompts. The system message and skills specify expertise in PromQL query generation, debugging, and Prometheus concepts. Resource limits are CPU 1000m/50m and memory 256Mi/128Mi. The kind is Agent, namespace kagent."
+  },
+  {
+    "id": "a8ffbbc7-eda4-40a2-9861-97ff55fd3252",
+    "kind": "Agent",
+    "namespace": "kagent",
+    "name": "retrieval-agent",
+    "document": "Agent kagent/retrieval-agent is a declarative AI agent that ingests and retrieves data across a vector store and a graph. It uses the Go runtime with default-model-config and operates in streaming mode. The system message details its role as a data agent over a vector store with contract tools qdrant-store for embedding and storing free text with metadata, and qdrant-find for semantic search. It ingests Kubernetes custom resources like kagent.dev Agent, ModelConfig, MCPServer, RemoteMCPServer but excludes generated resources like Deployment, Secret, or ServiceAccount. It references MCPServer kagent/qdrant-mcp-official for qdrant-find and qdrant-store tools and the Agent kagent/k8s-agent for cluster operations. The kind is Agent, namespace kagent."
+  },
+  {
+    "id": "50c59602-49a8-45e7-8585-3630470fd490",
+    "kind": "HelmRelease",
+    "namespace": "agentgateway-system",
+    "name": "agentgateway",
+    "document": "HelmRelease agentgateway in namespace agentgateway-system represents a Helm chart deployment named 'agentgateway'. It references an OCIRepository kind chart named 'agentgateway' in 'flux-system' namespace. This release depends on 'agentgateway-crds' also in 'agentgateway-system'. It is configured to create its namespace during install and syncs at an interval of 1 hour. Values specify enabling an inferenceExtension feature under 'inferenceExtension: enabled: true'. The releaseName is 'agentgateway'. This HelmRelease has status conditions indicating successful Helm install with chart version 1.5.0 and deployment info including roles, rolebindings, service accounts, and deployments associated with the release."
+  },
+  {
+    "id": "295f330f-ac6b-44af-b26a-0570accdccdc",
+    "kind": "HelmRelease",
+    "namespace": "agentgateway-system",
+    "name": "agentgateway-crds",
+    "document": "HelmRelease agentgateway-crds in namespace agentgateway-system manages the CRDs (CustomResourceDefinitions) for the agentgateway Helm chart. It references a chart named 'agentgateway-crds' in an OCIRepository in the 'flux-system' namespace. The install strategy for CRDs is CreateReplace, and the HelmRelease creates its namespace if missing. The release synchronizes every hour. Status indicates a successful Helm install of CRDs version 1.5.0 with deployed CRDs including agentgatewaybackends.agentgateway.dev, agentgatewaymodels.agentgateway.dev, agentgatewayparameters.agentgateway.dev, and agentgatewaypolicies.agentgateway.dev CRDs."
+  },
+  {
+    "id": "9507fa6b-bc2e-4521-a064-847f34999a78",
+    "kind": "HelmRelease",
+    "namespace": "agentregistry",
+    "name": "agentregistry-inventory",
+    "document": "HelmRelease agentregistry-inventory in namespace agentregistry deploys the 'agentregistry' Helm chart. The release is named 'agentregistry-inventory' and is set to create its namespace if needed. It has a 1 hour sync interval. Values disable authentication (disableAuth: true) and specify the container image tag 0.5.18. The HelmRelease status shows a successful install of chart version 0.5.16 with deployment including ServiceAccounts, ClusterRoles, RoleBindings, Services, Deployments and CRDs relating to agentregistry, discoveryconfig, modelcatalog, skillcatalog and others."
+  },
+  {
+    "id": "00a50570-14b4-4d36-88e1-e378b3787d56",
+    "kind": "HelmRelease",
+    "namespace": "kagent",
+    "name": "kagent",
+    "document": "HelmRelease kagent in namespace kagent configures the 'kagent' Helm chart deployment. It depends on 'kagent-crds' also in the kagent namespace. The release is named 'kagent' and installs with namespace creation enabled. It syncs every hour. Values configure several disabled Cilium-related agents, controller image tag 0.10.1, disable Istio agent, and set default provider to openAI with environment variable OPENAI_API_KEY. UI image tag is also 0.10.1. There is a kustomize postRenderer patch to add version label '0.10.1' on matching resources. Status shows successful installed chart version 0.10.1."
+  },
+  {
+    "id": "7e48a0db-d4ac-4689-a857-0f4a95757307",
+    "kind": "HelmRelease",
+    "namespace": "kagent",
+    "name": "kagent-crds",
+    "document": "HelmRelease kagent-crds in namespace kagent manages the CustomResourceDefinitions for the kagent Helm chart. It references a chart named 'kagent-crds' in the flux-system namespace with an install strategy to CreateReplace CRDs and create namespace. It syncs every hour. Status shows successful installation of CRDs version 0.10.1 including mcpservers.kagent.dev, agentharnesses.kagent.dev, agents.kagent.dev, memories.kagent.dev, modelconfigs.kagent.dev, modelproviderconfigs.kagent.dev, remotemcpservers.kagent.dev, sandboxagents.kagent.dev, and toolservers.kagent.dev CRDs."
+  },
+  {
+    "id": "d2cceb9f-ec7b-4088-a352-58ac1c624668",
+    "kind": "HelmRelease",
+    "namespace": "llm-d",
+    "name": "llm-d-embedding",
+    "document": "HelmRelease llm-d-embedding in namespace llm-d deploys the 'llm-d-modelservice' Helm chart version v0.3.17 from a HelmRepository named 'llm-d-modelservice' in the flux-system namespace. The release name is 'llm-d-embedding' and configured to create its namespace on install with a 1 hour sync interval. Values specify a CPU type accelerator, a llama-cpp decode container with custom commands and probes, model artifacts pointing to OCI URI for nomic-ai nomic-embed-text-v1.5, and some replicas and monitoring configurations. Status shows successful Helm install and deployment with associated ServiceAccount and Deployment."
+  },
+  {
+    "id": "9c7c0bd7-b516-405c-af15-dbefd657a24e",
+    "kind": "HelmRelease",
+    "namespace": "llm-d",
+    "name": "llm-d-pool",
+    "document": "HelmRelease llm-d-pool in namespace llm-d deploys the 'inferencepool' Helm chart version 1.5.0 from an OCIRepository named 'inferencepool' in the flux-system namespace. It depends on 'llm-d-embedding' in llm-d namespace. The release is named 'llm-d-pool', creates namespace on install, and syncs every hour. Values configure inferenceExtension with CPU/memory limits, disable monitoring, specify inferencePool with modelServers matching label 'llm-d.ai/model: nomic-embed-text-v1-5', target port 8000, and provider set to 'none'. Status shows successful Helm install and deployment including ServiceAccount, ConfigMap, Role, RoleBinding, Service, Deployment, and InferencePool resource."
+  },
+  {
+    "id": "9e8af26c-c700-48db-8427-aaf309323df5",
+    "kind": "HelmRelease",
+    "namespace": "neo4j",
+    "name": "neo4j",
+    "document": "HelmRelease neo4j in namespace neo4j deploys the 'neo4j' Helm chart version 2026.7.1 from a HelmRepository named 'neo4j' in flux-system namespace. The release name is 'neo4j', creates namespace on install, and syncs every hour. Values include disabling lookups, setting procedures allowlist and unrestricted to 'apoc.*', enabling community edition, password '[REDACTED]', CPU and memory resource requests, disabling neo4j service enablement, and volume data storage of 5Gi with ReadWriteOnce access. Status shows successful Helm install and deployment with related ConfigMaps, Service, StatefulSet and Secret resources."
+  },
+  {
+    "id": "21affde2-0715-40a1-891c-e1a464c354ef",
+    "kind": "HelmRelease",
+    "namespace": "phoenix",
+    "name": "phoenix",
+    "document": "HelmRelease phoenix in namespace phoenix deploys the 'phoenix-helm' Helm chart version 12.0.10. It creates namespace on install, with 1 hour sync interval. Values enable startupProbe health checks and disable ingress. Status shows failed Helm install with a timeout waiting for the Deployment/phoenix/phoenix status to become 'InProgress'. Deployment and other resources like Secrets, Services, ConfigMaps, and StatefulSet are listed in inventory. The release is stalled with 1 install failure recorded."
+  },
+  {
+    "id": "37b103f0-2ad3-46e3-8c7e-bfe21ae42fa6",
+    "kind": "HelmRelease",
+    "namespace": "qdrant",
+    "name": "qdrant",
+    "document": "HelmRelease qdrant in namespace qdrant manages the deployment of the 'qdrant' Helm chart version 1.19.1 from a HelmRepository named 'qdrant' in the flux-system namespace. It creates its namespace on install and has a sync interval of 1 hour. Status conditions indicate successful install with chart version 1.19.1. Inventory includes ServiceAccount, ConfigMap, Service (normal and headless), and StatefulSet resources associated with the qdrant release."
+  },
+  {
+    "id": "490dbf20-9d32-4fc2-8eff-95317c1eb313",
+    "kind": "MCPServer",
+    "namespace": "kagent",
+    "name": "neo4j-mcp",
+    "document": "This is an MCPServer named neo4j-mcp in the kagent namespace. It configures a deployment using image neo4j/mcp:v1.6.0 running /app/neo4j-mcp command. Environment variables include NEO4J_MCP_DATABASE neo4j, NEO4J_MCP_PASSWORD [REDACTED], NEO4J_MCP_READ_ONLY false, NEO4J_MCP_TELEMETRY false, NEO4J_MCP_URI bolt://neo4j.neo4j:7687, and NEO4J_MCP_USERNAME neo4j. It runs on port 3000 with 1 replica, CPU and memory resource requests and limits are defined. stdio transport is used with 30s timeout and transportType stdio. Status shows Ready as True."
+  },
+  {
+    "id": "dae744ce-5507-419f-afc5-d05d2d89a1bb",
+    "kind": "MCPServer",
+    "namespace": "kagent",
+    "name": "qdrant-mcp",
+    "document": "This is an MCPServer named qdrant-mcp in the kagent namespace. It configures a deployment using image ghcr.io/den-vasyliev/abox/qdrant-mcp:0.4.0 running /app/server command. Environment variables include EMBEDDINGS_BASE_URL http://llama-cpp-embeddings.llama-cpp:8090, QDRANT_COLLECTION abox-nomic, and QDRANT_URL http://qdrant.qdrant:6333. It runs on port 3000 with 1 replica, CPU and memory requests and limits defined. stdio transport is used with 30s timeout and transportType stdio. Status shows Ready as True."
+  },
+  {
+    "id": "3c5f453c-fe63-4862-aaf9-394fc6037c6f",
+    "kind": "MCPServer",
+    "namespace": "kagent",
+    "name": "qdrant-mcp-official",
+    "document": "This is an MCPServer named qdrant-mcp-official in the kagent namespace. It configures a deployment using image ghcr.io/astral-sh/uv:python3.12-bookworm-slim running command uvx with args mcp-server-qdrant@0.8.1, --transport, stdio. Environment variables include COLLECTION_NAME abox-minilm, EMBEDDING_MODEL sentence-transformers/all-MiniLM-L6-v2, EMBEDDING_PROVIDER fastembed, and QDRANT_URL http://qdrant.qdrant:6333. It runs on port 3000 with 1 replica, CPU and memory resource requests and limits defined. stdio transport is used with 30s timeout and transportType stdio. Status shows Ready as True."
+  },
+  {
+    "id": "13428e34-7187-46a1-ab32-1cc9f6ccd71f",
+    "kind": "ModelConfig",
+    "namespace": "kagent",
+    "name": "default-model-config",
+    "document": "This is a ModelConfig named default-model-config in the kagent namespace. It configures a model from provider OpenAI, using model gpt-4.1-mini. The spec includes openAI with apiFormat chatCompletions. It uses an API key secret named default-model-config with key OPENAI_API_KEY."
+  },
+  {
+    "id": "066a996f-0fcd-413b-8d28-2cbded617112",
+    "kind": "RemoteMCPServer",
+    "namespace": "kagent",
+    "name": "kagent-grafana-mcp",
+    "document": "This is a RemoteMCPServer named kagent-grafana-mcp in the kagent namespace. It configures a Grafana MCP server accessed via STREAMABLE_HTTP protocol at URL http://kagent-grafana-mcp.kagent:8000/mcp. It has a description 'Grafana MCP server', sseReadTimeout 5m0s, terminateOnClose true, and timeout 30s. Status shows Accepted as False with a ReconcileFailed error due to forbidden access during initialization."
+  },
+  {
+    "id": "740c5959-6275-455b-bd68-ca8a67ff44e7",
+    "kind": "RemoteMCPServer",
+    "namespace": "kagent",
+    "name": "kagent-tool-server",
+    "document": "This is a RemoteMCPServer named kagent-tool-server in the kagent namespace. It configures an official KAgent tool server accessed via STREAMABLE_HTTP protocol at URL http://kagent-tools.kagent:8084/mcp. It has description 'Official KAgent tool server', sseReadTimeout 5m0s, terminateOnClose true, and timeout 30s. The status shows Accepted as True. It discovers many tools including argo_check_plugin_logs, argo_pause_rollout, cilium_connect_to_remote_cluster, cilium_install_cilium, helm_get_release, istio_install_istio, and more, with several namespaces and plugins. It also includes a tool named 'promql-agent' of type Agent."
+  }
+]
