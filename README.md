@@ -1,6 +1,3 @@
-# Harness Engineering — labs
-
-Lab work for the [fwdays Harness Engineering](https://fwdays.com/event/harness-engineering) course.
 Plan to finish: **18.10.2026**.
 
 | # | Lab | Status | ADR |
